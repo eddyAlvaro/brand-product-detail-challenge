@@ -1,14 +1,12 @@
-import Navbar from "./components/Navbar";
+import LandingLayout from "./components/layouts/landing-layout/landing-layout";
+import ProductDetailPage from "./pages/product-detail/product-detail-page";
 
 function App() {
   return (
     <>
-      <div className="bg-neutral-dark">
-        <p className="text-center text-[12px] sm:text-[15px] text-white">
-          15% OFF EN TODO CON EL CÓDIGO: XXXOFF
-        </p>
-      </div>
-      <Navbar />
+      <LandingLayout>
+        <ProductDetailPage />
+      </LandingLayout>
     </>
   );
 }

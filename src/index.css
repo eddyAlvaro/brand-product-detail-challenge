@@ -5,3 +5,9 @@
   --color-brand-accent: #4d525c;
   --color-neutral-dark: #000000;
 }
+
+#root {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}

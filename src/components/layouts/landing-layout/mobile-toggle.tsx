@@ -1,0 +1,23 @@
+import { MenuIcon } from "../../icons";
+
+type Props = {
+  isOpen: boolean;
+  controlsId: string;
+  onToggle: () => void;
+};
+
+const MobileToggle = ({ isOpen, controlsId, onToggle }: Props) => {
+  return (
+    <button
+      type="button"
+      className="sm:hidden inline-flex items-center rounded-full p-2 ring-1 ring-white/60 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+      aria-controls={controlsId}
+      aria-expanded={isOpen}
+      onClick={onToggle}
+    >
+      <span className="sr-only">Abrir menú</span>
+      <MenuIcon className="h-6 w-6" aria-hidden="true" />
+    </button>
+  );
+};
+export default MobileToggle;
