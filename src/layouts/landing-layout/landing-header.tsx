@@ -1,8 +1,8 @@
 import { useState } from "react";
 import PromoBar from "./promo-bar";
 import MobileToggle from "./mobile-toggle";
-import { NAV_LINKS } from "../../../constants/nav-links";
 import NavLinks from "./nav-links";
+import { NAV_LINKS } from "../../constants/nav-links";
 
 const LandingHeader = () => {
   const [isOpen, setIsOpen] = useState(false);

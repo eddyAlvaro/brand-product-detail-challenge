@@ -1,13 +1,40 @@
 @import "tailwindcss";
 
 @theme {
+  --font-sans: "Outfit", sans-serif;
+  --font-heading: "Outfit", sans-serif;
+}
+
+@layer base {
+  html {
+    @apply font-sans;
+  }
+}
+
+@theme {
   --color-brand-primary: #eb00d3;
-  --color-brand-accent: #4d525c;
-  --color-neutral-dark: #000000;
+  --color-brand-accent: #4a4a6a;
+
+  /* ===== Neutrales / UI ===== */
+  --color-bg: #f5f4f4; /* fondo base */
+  --color-border: #d9d9d9; /* bordes/dividers */
+  --color-foreground: #4d525c; /* texto principal */
+  --color-muted: #666687; /* texto secundario */
+  --color-subtle: #666666; /* placeholders/iconos tenues */
+  --color-neutral-dark: #000000; /* negro real */
+
+  /* ===== Aliases opcionales (compatibilidad con tu bloque anterior) ===== */
+  --color-brand-green: #07706a; /* alias de brand-primary */
+  --color-light-green: #00fff033; /* alias de brand-tint-a20 */
 }
 
 #root {
   height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  font-family: "Outfit";
+}
+
+.MuiBreadcrumbs-separator {
+  margin: 0 0.2rem;
 }

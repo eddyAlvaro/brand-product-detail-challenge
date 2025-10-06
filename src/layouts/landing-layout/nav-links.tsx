@@ -1,4 +1,4 @@
-import type { NavLink } from "../../../constants/nav-links";
+import type { NavLink } from "../../constants/nav-links";
 
 type Props = {
   links: NavLink[];
@@ -21,7 +21,7 @@ const NavLinks = ({ links, isOpen, id, onItemClick }: Props) => {
         data-[open=true]:max-h-96 data-[open=true]:opacity-100 data-[open=true]:translate-y-0
         sm:max-h-none sm:opacity-100 sm:translate-y-0 sm:transition-none
         flex flex-col sm:flex-row sm:items-center
-        gap-4 sm:gap-[32px]
+        gap-4 sm:gap-[8px_32px] sm:flex-wrap sm:justify-center
         px-6 py-4 sm:p-0
         uppercase font-medium text-[18px] sm:text-[15px]
         motion-reduce:transition-none motion-reduce:duration-0

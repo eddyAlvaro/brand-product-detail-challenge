@@ -1,4 +1,4 @@
-import { MenuIcon } from "../../icons";
+import { MenuIcon } from "../../components/icons";
 
 type Props = {
   isOpen: boolean;
