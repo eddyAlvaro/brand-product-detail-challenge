@@ -10,106 +10,31 @@ import {
 import { ProductGallery } from "../../components/product-galery";
 import { ProductHeader } from "../../components/product-header";
 import { ProductDescription } from "../../components/product-description";
+import { useFlavours } from "../../hooks/useFlavours";
+import { ProductBreadcrumbs } from "../../components/product-breadcrumbs";
 const ProductDetailPage = () => {
-  // TODO:instancia variable de entorno
-  const apiUrl = import.meta.env.VITE_API_URL;
-  console.log(apiUrl);
+  const { data: flavours } = useFlavours();
 
-  //TODO: cargar datos de productos
-  const relatedProducts: Product[] = [
-    {
-      id: "1",
-      name: "Whey Protein - Original",
-      price: "$68.390",
-      oldPrice: "$71.990",
-      discount: "-5%",
-      image: imc_shaker_bottle,
-    },
-    {
-      id: "2",
-      name: "Whey Protein - Original",
-      price: "$68.390",
-      oldPrice: "$71.990",
-      discount: "-5%",
-      image: imc_shaker_bottle,
-    },
-    {
-      id: "3",
-      name: "Whey Protein - Original",
-      price: "$68.390",
-      oldPrice: "$71.990",
-      discount: "-5%",
-      image: imc_shaker_bottle,
-    },
-    {
-      id: "3",
-      name: "Whey Protein - Original",
-      price: "$68.390",
-      oldPrice: "$71.990",
-      discount: "-5%",
-      image: imc_shaker_bottle,
-    },
-    {
-      id: "4",
-      name: "Whey Protein - Original",
-      price: "$68.390",
-      oldPrice: "$71.990",
-      discount: "-5%",
-      image: imc_shaker_bottle,
-    },
-    {
-      id: "5",
-      name: "Whey Protein - Original",
-      price: "$68.390",
-      oldPrice: "$71.990",
-      discount: "-5%",
-      image: imc_shaker_bottle,
-    },
-    {
-      id: "6",
-      name: "Whey Protein - Original",
-      price: "$68.390",
-      oldPrice: "$71.990",
-      discount: "-5%",
-      image: imc_shaker_bottle,
-    },
-    {
-      id: "7",
-      name: "Whey Protein - Original",
-      price: "$68.390",
-      oldPrice: "$71.990",
-      discount: "-5%",
-      image: imc_shaker_bottle,
-    },
-    {
-      id: "8",
-      name: "Whey Protein - Original",
-      price: "$68.390",
-      oldPrice: "$71.990",
-      discount: "-5%",
-      image: imc_shaker_bottle,
-    },
+  const relatedProducts: Product[] = Array.from({ length: 5 }).map((_, i) => ({
+    id: String(i + 1),
+    name: "Whey Protein - Original",
+    price: "$68.390",
+    oldPrice: "$71.990",
+    discount: "-5%",
+    image: imc_shaker_bottle,
+  }));
+
+  const breadcrumbs = [
+    { label: "Inicio", href: "/" },
+    { label: "Proteínas", href: "/proteinas" },
+    { label: "Whey Protein" },
   ];
+
   return (
     <>
       <section className="grid grid-rows-[auto_1fr] md:grid-cols-2 items-stretch gap-8 w-full max-w-[1440px] m-[0_auto] px-4 pt-4  sm:px-[38px] md:pt-[51px] ">
         <div className="flex flex-col gap-2 md:gap-8 ">
-          <Breadcrumbs
-            className="uppercase text-foreground font-[400] text-[12px] sm:text-[16px]"
-            aria-label="breadcrumb"
-          >
-            <Link underline="hover" color="inherit" href="/">
-              Inicio
-            </Link>
-            <Link
-              underline="hover"
-              color="inherit"
-              href="/material-ui/getting-started/installation/"
-            >
-              Proteínas
-            </Link>
-            <p>Whey Protein</p>
-          </Breadcrumbs>
+          <ProductBreadcrumbs items={breadcrumbs} />
           <ProductGallery
             main={imc_protein}
             thumbs={[imc_protein_crop, imc_protein_crop, imc_protein_crop]}
@@ -135,7 +60,11 @@ const ProductDetailPage = () => {
               creatina para acelerar el aumento de músculo y la fuerza.
             </p>
           </ProductDescription>
-          <ProductActions flavours={["Chocolate", "Vainilla", "Frutilla"]} />
+          {flavours ? (
+            <ProductActions flavours={flavours} />
+          ) : (
+            <span>Cargando...</span>
+          )}
         </div>
       </section>
       <section className="flex flex-col gap-2 max-w-[1440px] w-full px-4 m-[4px_auto] text-center">
