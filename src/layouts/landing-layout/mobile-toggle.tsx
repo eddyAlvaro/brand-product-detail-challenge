@@ -10,7 +10,7 @@ const MobileToggle = ({ isOpen, controlsId, onToggle }: Props) => {
   return (
     <button
       type="button"
-      className="sm:hidden inline-flex items-center rounded-full p-2 ring-1 ring-white/60 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+      className="md:hidden inline-flex items-center rounded-full p-2 ring-1 ring-white/60 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer"
       aria-controls={controlsId}
       aria-expanded={isOpen}
       onClick={onToggle}

@@ -40,7 +40,7 @@ export const SectionTitle = ({
         className={[
           underlineWidthClass,
           underlineColorClass,
-          "h-[2px] rounded-full",
+          "h-[2px] rounded-full mb-3",
         ].join(" ")}
       />
     </div>

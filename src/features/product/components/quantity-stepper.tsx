@@ -10,7 +10,7 @@ const QuantityStepper = ({ value, onChange, min = 1 }: Props) => {
   return (
     <div className="grid grid-cols-[auto_1fr_auto] w-full sm:w-auto gap-1 md:gap-3">
       <button
-        className="w-[28px] h-[28px] bg-border rounded-[5px] "
+        className="w-[28px] h-[28px] bg-border rounded-[5px] cursor-pointer"
         onClick={dec}
         aria-label="Disminuir cantidad"
         disabled={value <= min}
@@ -27,7 +27,7 @@ const QuantityStepper = ({ value, onChange, min = 1 }: Props) => {
       </div>
 
       <button
-        className="w-[28px] h-[28px] bg-border rounded-[5px] "
+        className="w-[28px] h-[28px] bg-border rounded-[5px] cursor-pointer"
         onClick={inc}
         aria-label="Aumentar cantidad"
       >

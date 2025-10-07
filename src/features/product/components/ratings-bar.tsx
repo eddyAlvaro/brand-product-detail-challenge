@@ -9,7 +9,7 @@ type Props = {
 export const RatingsBar = ({ total, average, onWrite }: Props) => {
   return (
     <section
-      className="flex flex-col gap-12 md:flex-row md:items-center "
+      className="flex gap-4 sm:gap-12 flex-row md:items-center mb-7 md:mb-0"
       aria-label="Resumen de valoraciones y acción para escribir comentario"
     >
       <div className="flex items-center gap-2 text-[16px]">
@@ -26,14 +26,14 @@ export const RatingsBar = ({ total, average, onWrite }: Props) => {
         <button
           type="button"
           onClick={onWrite}
-          className="group flex items-center gap-3 text-xl font-extrabold"
+          className="flex flex-col items-center gap-[3px] font-bold cursor-pointer hover:text-2xl"
           aria-label="Escribir comentario"
         >
-          <PencilSquareIcon className="h-[16px] w-[16px]" fontSize="medium" />
-          <span className="relative text-[15px]">
-            Escribir comentario
-            <span className="block h-[3px] w-full bg-black transition-all group-hover:w-[110%]" />
-          </span>
+          <div className="flex gap-3 items-center">
+            <PencilSquareIcon className="h-[16px] w-[16px]" fontSize="medium" />
+            <span className="relative text-[15px]">Escribir comentario</span>
+          </div>
+          <span className="flex h-[1.5px] w-full bg-black" />
         </button>
       </div>
     </section>
