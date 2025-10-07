@@ -1,4 +1,3 @@
-import { Breadcrumbs, Link } from "@mui/material";
 import imc_protein_crop from "../../../../assets/whey-protein-crop.png";
 import imc_protein from "../../../../assets/whey-protein.png";
 import ProductActions from "../../components/product-actions";
