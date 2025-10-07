@@ -1,6 +1,7 @@
 import React from "react";
 import LandingHeader from "./landing-header";
-import LandingFooter from "./landing-footer";
+import { NewsletterCta } from "../../components/ui/newsletter-cta";
+import { LandingFooter } from "./landing-footer";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -10,6 +11,7 @@ function LandingLayout({ children }: LayoutProps) {
     <>
       <LandingHeader />
       <main>{children}</main>
+      <NewsletterCta />
       <LandingFooter />
     </>
   );
