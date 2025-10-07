@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { useEffect, useRef } from "react";
 import { CartIcon } from "../../../components/icons/cart-icon";
-
+import type { Swiper as SwiperInstance } from "swiper";
 export type Product = {
   id: string;
   name: string;
@@ -15,7 +15,7 @@ export type Product = {
 type Props = { products: Product[] };
 
 export const RelatedProducts = ({ products }: Props) => {
-  const swiperRef = useRef<any>(null);
+  const swiperRef = useRef<SwiperInstance | null>(null);
 
   useEffect(() => {
     const onResize = () => swiperRef.current?.update?.();

@@ -1,6 +1,7 @@
 import type { DeliveryType } from "../types";
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { DeliveryIcon, StoreIcon } from "../../../components/icons";
+import type { MouseEvent } from "react";
 
 type Props = {
   value: DeliveryType;
@@ -8,8 +9,10 @@ type Props = {
 };
 
 export const DeliveryOptions = ({ value, onChange }: Props) => {
-  //TODO refactor any
-  const handleDelivery = (_: any, newValue: DeliveryType | null) => {
+  const handleDelivery = (
+    _: MouseEvent<HTMLElement>,
+    newValue: DeliveryType | null
+  ) => {
     if (newValue) onChange(newValue);
   };
   return (
