@@ -16,7 +16,7 @@ type Props = {
 };
 
 const ProductActions = ({ flavours, onAdd }: Props) => {
-  const [flavour, setFlavour] = useState(flavours[0] ?? "");
+  const [flavour, setFlavour] = useState("");
   const [qty, setQty] = useState(1);
   const [delivery, setDelivery] = useState<DeliveryType>("home");
 
