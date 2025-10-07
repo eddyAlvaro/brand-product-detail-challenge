@@ -1,15 +1,7 @@
 @import "tailwindcss";
-
-@theme {
-  --font-sans: "Outfit", sans-serif;
-  --font-heading: "Outfit", sans-serif;
-}
-
-@layer base {
-  html {
-    @apply font-sans;
-  }
-}
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
 
 @theme {
   --color-brand-primary: #eb00d3;
@@ -22,6 +14,7 @@
   --color-muted: #666687; /* texto secundario */
   --color-subtle: #666666; /* placeholders/iconos tenues */
   --color-neutral-dark: #000000; /* negro real */
+  --color-selected: #333333; /* color de seleccion */
 
   /* ===== Aliases opcionales (compatibilidad con tu bloque anterior) ===== */
   --color-brand-green: #07706a; /* alias de brand-primary */
@@ -32,9 +25,20 @@
   height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  font-family: "Outfit";
+  font-family: "Outfit", sans-serif;
 }
 
 .MuiBreadcrumbs-separator {
   margin: 0 0.2rem;
+}
+
+.swiper {
+  width: 100%;
+  max-width: 100%;
+}
+.swiper-wrapper {
+  align-items: stretch;
+}
+.swiper-slide {
+  height: auto;
 }
