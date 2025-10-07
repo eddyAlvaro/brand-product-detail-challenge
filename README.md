@@ -46,3 +46,33 @@ echo "VITE_API_URL=https://preapi.aquaforce.cl/api" > .env
 # 3️⃣ Ejecutar el entorno de desarrollo
 
 pnpm dev
+
+## 📸 Capturas del Proyecto
+
+### 💻 Versión Desktop – Detalle del Producto
+
+Vista general del producto con galería, selector de sabor y productos relacionados.
+
+![Detalle del producto en versión desktop](./docs/screenshot-desktop-detail.png)
+
+---
+
+### 🖼️ Galería con Swiper (Vista Desktop)
+
+Componente interactivo de galería implementado con Swiper.js y diseño responsivo.
+
+![Swiper en versión desktop](./docs/screenshot-desktop-swiper.png)
+
+---
+
+### 📱 Versión Mobile – Diseño Responsivo
+
+Interfaz adaptada para pantallas pequeñas. Se mantienen jerarquías, márgenes y legibilidad.
+
+## ![Vista mobile del producto](./docs/screenshot-mobile-version.png)
+
+---
+
+### 🖼️ Galería con Swiper (Vista Mobile)
+
+![Swiper en versión mobile](./docs/screenshot-mobile-swiper.png)
