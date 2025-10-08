@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { useEffect, useRef } from "react";
-import { CartIcon } from "../../../components/icons/cart-icon";
+import { CartIcon } from "@/components/icons";
 import type { Swiper as SwiperInstance } from "swiper";
 export type Product = {
   id: string;

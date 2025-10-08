@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import FlavourSelect from "./flavour-select";
-import type { DeliveryType } from "../types";
-import { DeliveryOptions } from "./delivery-options";
-import { RatingsBar } from "./ratings-bar";
-import { AddToCartRow } from "./add-to-cart-row";
+import type { DeliveryType } from "@/features/product/types";
+import FlavourSelect from "@/features/product/components/flavour-select";
+import { AddToCartRow } from "@/features/product/components/add-to-cart-row";
+import { DeliveryOptions } from "@/features/product/components/delivery-options";
+import { RatingsBar } from "@/features/product/components/ratings-bar";
 
 type Props = {
   flavours: string[];

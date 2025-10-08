@@ -1,4 +1,4 @@
-import { ProductPrice } from "./product-price";
+import { ProductPrice } from "@/features/product/components/product-price";
 
 type Props = {
   brand: string;

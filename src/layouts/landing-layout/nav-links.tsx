@@ -1,10 +1,9 @@
 import { memo } from "react";
-import { DeliverySecondIcon } from "../../components/icons/delivery-second-icon";
-import { ShopIcon } from "../../components/icons/shop-icon";
-import type { NavLink } from "../../constants/nav-links";
-import IconLink from "../../components/ui/icon-link";
-import { UnderlineNavItem } from "../../components/ui/underline-nav-item";
-import { Anchor } from "../../components/ui/anchor";
+import { DeliverySecondIcon, ShopIcon } from "@/components/icons";
+import IconLink from "@/components/ui/icon-link";
+import type { NavLink } from "@/constants/nav-links";
+import { UnderlineNavItem } from "@/components/ui/underline-nav-item";
+import { Anchor } from "@/components/ui/anchor";
 
 type Props = {
   links: NavLink[];

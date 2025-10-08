@@ -1,7 +1,7 @@
 import React from "react";
-import LandingHeader from "./landing-header";
-import { NewsletterCta } from "../../components/ui/newsletter-cta";
-import { LandingFooter } from "./landing-footer";
+import { NewsletterCta } from "@/components/ui/newsletter-cta";
+import { LandingFooter } from "@/layouts/landing-layout/landing-footer";
+import LandingHeader from "@/layouts/landing-layout/landing-header";
 
 interface LayoutProps {
   children: React.ReactNode;

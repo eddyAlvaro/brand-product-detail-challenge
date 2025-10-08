@@ -1,6 +1,6 @@
-import type { DeliveryType } from "../types";
+import type { DeliveryType } from "@/features/product/types";
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
-import { DeliveryIcon, StoreIcon } from "../../../components/icons";
+import { DeliveryIcon, StoreIcon } from "@/components/icons";
 import type { MouseEvent } from "react";
 
 type Props = {

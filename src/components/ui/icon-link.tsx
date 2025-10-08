@@ -1,6 +1,6 @@
 import { memo, type MouseEventHandler } from "react";
-import { cn } from "../../utils/cn";
-import { Anchor } from "./anchor";
+import { cn } from "@/utils/cn";
+import { Anchor } from "@/components/ui/anchor";
 
 type IconLinkProps = {
   href: string;

@@ -1,7 +1,7 @@
 import { Link as MLink } from "@mui/material";
-import { FOOTER_COLUMNS } from "../../constants/footer-links";
-import { FooterColumn } from "../../components/ui/footer/footer-column";
-import { FooterSocial } from "../../components/ui/footer/footer-social";
+import { FOOTER_COLUMNS } from "@/constants/footer-links";
+import { FooterColumn } from "@/components/ui/footer/footer-column";
+import { FooterSocial } from "@/components/ui/footer/footer-social";
 
 function FooterTextLink({
   href,

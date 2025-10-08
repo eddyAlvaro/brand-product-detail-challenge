@@ -1,5 +1,5 @@
-import { AddToCartButton } from "./add-to-cart-button";
-import QuantityStepper from "./quantity-stepper";
+import { AddToCartButton } from "@/features/product/components/add-to-cart-button";
+import QuantityStepper from "@/features/product/components/quantity-stepper";
 
 type Props = {
   qty: number;

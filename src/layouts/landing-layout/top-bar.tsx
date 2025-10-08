@@ -1,7 +1,5 @@
 // components/header/top-bar.tsx
-import { DeliverySecondIcon } from "../../components/icons/delivery-second-icon";
-import { ShopIcon } from "../../components/icons/shop-icon";
-import { UserIcon } from "../../components/icons/user-icon";
+import { DeliverySecondIcon, ShopIcon, UserIcon } from "@/components/icons";
 
 const items = [
   { href: "/login", label: "Iniciar sesión", Icon: UserIcon },

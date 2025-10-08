@@ -1,5 +1,5 @@
 import { memo, type MouseEventHandler } from "react";
-import { Anchor } from "./anchor";
+import { Anchor } from "@/components/ui/anchor";
 
 type Props = {
   href: string;

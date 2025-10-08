@@ -1,5 +1,5 @@
-import type { FlavourResponse } from "../types/flavour";
-import { mapFlavourResponse } from "./flavour.mapper";
+import { mapFlavourResponse } from "@/features/product/services/flavour.mapper";
+import type { FlavourResponse } from "@/features/product/types/flavour";
 
 const API_URL = import.meta.env.VITE_API_URL;
 

@@ -1,5 +1,4 @@
-import { CartSecondIcon } from "../../components/icons/cart-secod-icon";
-import { SearchIcon } from "../../components/icons/search-icon";
+import { CartSecondIcon, SearchIcon } from "@/components/icons";
 
 export default function SearchCartRow() {
   return (

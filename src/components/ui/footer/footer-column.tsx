@@ -1,7 +1,7 @@
-import type { FooterLink } from "../../../constants/footer-links";
-import { LocationIcon } from "../../icons/location-icon";
-import { SectionTitle } from "../section-title";
-import { FooterTextLink } from "./footer-text-link";
+import type { FooterLink } from "@/constants/footer-links";
+import { LocationIcon } from "@/components/icons/location-icon";
+import { SectionTitle } from "@/components/ui/section-title";
+import { FooterTextLink } from "@/components/ui/footer/footer-text-link";
 
 type Props = {
   id: string;

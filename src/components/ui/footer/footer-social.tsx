@@ -1,6 +1,6 @@
-import type { SocialLink } from "../../../constants/footer-links";
-import { SectionTitle } from "../section-title";
-import { FooterTextLink } from "./footer-text-link";
+import type { SocialLink } from "@/constants/footer-links";
+import { SectionTitle } from "@/components/ui/section-title";
+import { FooterTextLink } from "@/components/ui/footer/footer-text-link";
 
 type Props = {
   parentId: string;

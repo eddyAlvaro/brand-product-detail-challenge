@@ -1,4 +1,4 @@
-import { PencilSquareIcon, StarIcon } from "../../../components/icons";
+import { PencilSquareIcon, StarIcon } from "@/components/icons";
 
 type Props = {
   total: number;

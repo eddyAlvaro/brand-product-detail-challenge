@@ -1,17 +1,17 @@
-import imc_protein_crop from "../../../../assets/whey-protein-crop.png";
-import imc_protein from "../../../../assets/whey-protein.png";
-import ProductActions from "../../components/product-actions";
-import imc_shaker_bottle from "../../../../assets/shaker-bottle.png";
-import { ProductGallery } from "../../components/product-galery";
-import { ProductHeader } from "../../components/product-header";
-import { ProductDescription } from "../../components/product-description";
-import { useFlavours } from "../../hooks/useFlavours";
-import { ProductBreadcrumbs } from "../../components/product-breadcrumbs";
+import imc_protein_crop from "@/assets/whey-protein-crop.png";
+import imc_protein from "@/assets/whey-protein.png";
+import imc_shaker_bottle from "@/assets/shaker-bottle.png";
+import ProductActions from "@/features/product/components/product-actions";
+import { ProductGallery } from "@/features/product/components/product-galery";
+import { ProductHeader } from "@/features/product/components/product-header";
+import { ProductDescription } from "@/features/product/components/product-description";
+import { useFlavours } from "@/features/product/hooks/useFlavours";
+import { ProductBreadcrumbs } from "@/features/product/components/product-breadcrumbs";
 import { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
-import type { Product } from "../../types/products";
+import type { Product } from "@/features/product/types/products";
 
 const RelatedProductsLazy = lazy(async () => {
-  const mod = await import("../../components/related-products.");
+  const mod = await import("@/features/product/components/related-products.");
   return {
     default: (props: { products: Product[] }) => (
       <mod.RelatedProducts {...props} />
