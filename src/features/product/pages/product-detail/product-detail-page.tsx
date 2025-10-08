@@ -1,21 +1,20 @@
+import { Suspense, lazy, useEffect, useMemo, useRef, useState } from "react";
+
+import imc_shaker_bottle from "@/assets/shaker-bottle.png";
 import imc_protein_crop from "@/assets/whey-protein-crop.png";
 import imc_protein from "@/assets/whey-protein.png";
-import imc_shaker_bottle from "@/assets/shaker-bottle.png";
 import ProductActions from "@/features/product/components/product-actions";
+import { ProductBreadcrumbs } from "@/features/product/components/product-breadcrumbs";
+import { ProductDescription } from "@/features/product/components/product-description";
 import { ProductGallery } from "@/features/product/components/product-galery";
 import { ProductHeader } from "@/features/product/components/product-header";
-import { ProductDescription } from "@/features/product/components/product-description";
 import { useFlavours } from "@/features/product/hooks/useFlavours";
-import { ProductBreadcrumbs } from "@/features/product/components/product-breadcrumbs";
-import { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
 import type { Product } from "@/features/product/types/products";
 
 const RelatedProductsLazy = lazy(async () => {
   const mod = await import("@/features/product/components/related-products.");
   return {
-    default: (props: { products: Product[] }) => (
-      <mod.RelatedProducts {...props} />
-    ),
+    default: (props: { products: Product[] }) => <mod.RelatedProducts {...props} />,
   };
 });
 
@@ -32,7 +31,7 @@ const ProductDetailPage = () => {
         discount: "-5%",
         image: imc_shaker_bottle,
       })),
-    []
+    [],
   );
 
   const breadcrumbs = useMemo(
@@ -41,7 +40,7 @@ const ProductDetailPage = () => {
       { label: "Proteínas", href: "/proteinas" },
       { label: "Whey Protein" },
     ],
-    []
+    [],
   );
   const relatedAnchorRef = useRef<HTMLDivElement | null>(null);
   const [showRelated, setShowRelated] = useState(false);
@@ -58,7 +57,7 @@ const ProductDetailPage = () => {
           io.disconnect();
         }
       },
-      { rootMargin: "200px" }
+      { rootMargin: "200px" },
     );
 
     io.observe(el);
@@ -87,19 +86,14 @@ const ProductDetailPage = () => {
           />
           <ProductDescription>
             <p>
-              Exclusiva fórmula proteica a base de suero de leche aislado e
-              hidrolizado que ha sido científicamente diseñada para construir
-              músculo magro libre de grasa, aumentar la fuerza y mejorar el
-              rendimiento deportivo. Cada porción contiene 30 g de proteína y
-              una matriz de aminoácidos de cadena ramificada, glutamina y
-              creatina para acelerar el aumento de músculo y la fuerza.
+              Exclusiva fórmula proteica a base de suero de leche aislado e hidrolizado que ha sido
+              científicamente diseñada para construir músculo magro libre de grasa, aumentar la
+              fuerza y mejorar el rendimiento deportivo. Cada porción contiene 30 g de proteína y
+              una matriz de aminoácidos de cadena ramificada, glutamina y creatina para acelerar el
+              aumento de músculo y la fuerza.
             </p>
           </ProductDescription>
-          {flavours ? (
-            <ProductActions flavours={flavours} />
-          ) : (
-            <span>Cargando...</span>
-          )}
+          {flavours ? <ProductActions flavours={flavours} /> : <span>Cargando...</span>}
         </div>
       </section>
       <section className="flex flex-col gap-2 max-w-[1440px] w-full px-4 m-[4px_auto] text-center">
@@ -117,9 +111,7 @@ const ProductDetailPage = () => {
             </div>
           }
         >
-          {showRelated ? (
-            <RelatedProductsLazy products={relatedProducts} />
-          ) : null}
+          {showRelated ? <RelatedProductsLazy products={relatedProducts} /> : null}
         </Suspense>
       </section>
     </>

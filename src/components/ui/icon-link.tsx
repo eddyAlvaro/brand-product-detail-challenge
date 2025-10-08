@@ -1,6 +1,7 @@
-import { memo, type MouseEventHandler } from "react";
-import { cn } from "@/utils/cn";
+import { type MouseEventHandler, memo } from "react";
+
 import { Anchor } from "@/components/ui/anchor";
+import { cn } from "@/utils/cn";
 
 type IconLinkProps = {
   href: string;
@@ -31,9 +32,7 @@ const IconLink = memo(function IconLink({
   return (
     <Anchor href={href} onClick={onClick} className={ICON_LINK_BASE}>
       <Icon className="w-[22px] h-[16px]" />
-      <span className={cn("normal-case font-semibold", textClasses)}>
-        {label}
-      </span>
+      <span className={cn("normal-case font-semibold", textClasses)}>{label}</span>
     </Anchor>
   );
 });

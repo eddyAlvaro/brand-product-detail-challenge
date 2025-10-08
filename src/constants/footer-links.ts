@@ -1,5 +1,5 @@
-import { FacebookIcon } from "@/components/icons/facebook-icon";
 import { InstagramIcon } from "@/components/icons/Instagram-icon";
+import { FacebookIcon } from "@/components/icons/facebook-icon";
 import { MessageIcon } from "@/components/icons/message-icon";
 import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 

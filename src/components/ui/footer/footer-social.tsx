@@ -1,6 +1,6 @@
-import type { SocialLink } from "@/constants/footer-links";
-import { SectionTitle } from "@/components/ui/section-title";
 import { FooterTextLink } from "@/components/ui/footer/footer-text-link";
+import { SectionTitle } from "@/components/ui/section-title";
+import type { SocialLink } from "@/constants/footer-links";
 
 type Props = {
   parentId: string;
@@ -12,12 +12,7 @@ export function FooterSocial({ parentId, title, items }: Props) {
   const socialTitleId = `footer-${parentId}-social-title`;
   return (
     <section className="mt-4" aria-labelledby={socialTitleId}>
-      <SectionTitle
-        as="h3"
-        align="left"
-        underlineWidthClass="w-full"
-        className="text-[16px]"
-      >
+      <SectionTitle as="h3" align="left" underlineWidthClass="w-full" className="text-[16px]">
         <span id={socialTitleId}>{title}</span>
       </SectionTitle>
 

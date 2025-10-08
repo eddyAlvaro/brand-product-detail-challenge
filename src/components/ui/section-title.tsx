@@ -19,29 +19,22 @@ export const SectionTitle = ({
 }: Props) => {
   const Tag = as;
   const alignWrap =
-    align === "center"
-      ? "items-center"
-      : align === "right"
-      ? "items-end"
-      : "items-start";
+    align === "center" ? "items-center" : align === "right" ? "items-end" : "items-start";
 
   return (
     <div className={`flex flex-col w-fit ${alignWrap}`}>
       <Tag
-        className={[
-          "font-extrabold text-[16px] text-foreground leading-tight",
-          className,
-        ].join(" ")}
+        className={["font-extrabold text-[16px] text-foreground leading-tight", className].join(
+          " ",
+        )}
       >
         {children}
       </Tag>
       <span
         aria-hidden
-        className={[
-          underlineWidthClass,
-          underlineColorClass,
-          "h-[2px] rounded-full mb-3",
-        ].join(" ")}
+        className={[underlineWidthClass, underlineColorClass, "h-[2px] rounded-full mb-3"].join(
+          " ",
+        )}
       />
     </div>
   );

@@ -1,8 +1,6 @@
 import React from "react";
 
-export const DeliveryIcon: React.FC<React.SVGProps<SVGSVGElement>> = (
-  props
-) => {
+export const DeliveryIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
       width="20"

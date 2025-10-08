@@ -1,6 +1,4 @@
-export const DeliverySecondIcon: React.FC<React.SVGProps<SVGSVGElement>> = (
-  props
-) => {
+export const DeliverySecondIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
       width="22"

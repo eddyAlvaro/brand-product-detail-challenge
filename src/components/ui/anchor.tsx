@@ -1,4 +1,4 @@
-import { type PropsWithChildren, type MouseEventHandler, memo } from "react";
+import { type MouseEventHandler, type PropsWithChildren, memo } from "react";
 
 type AnchorProps = PropsWithChildren<{
   href: string;
@@ -15,12 +15,7 @@ export const Anchor = memo(function Anchor({
   children,
 }: AnchorProps) {
   return (
-    <a
-      href={href}
-      className={className}
-      onClick={onClick}
-      aria-current={ariaCurrent}
-    >
+    <a href={href} className={className} onClick={onClick} aria-current={ariaCurrent}>
       {children}
     </a>
   );

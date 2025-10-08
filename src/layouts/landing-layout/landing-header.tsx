@@ -1,9 +1,10 @@
 import { useState } from "react";
+
 import { NAV_LINKS } from "@/constants/nav-links";
-import { TopBar } from "@/layouts/landing-layout/top-bar";
 import MobileToggle from "@/layouts/landing-layout/mobile-toggle";
 import NavLinks from "@/layouts/landing-layout/nav-links";
 import SearchCartRow from "@/layouts/landing-layout/search-cart-row";
+import { TopBar } from "@/layouts/landing-layout/top-bar";
 
 const LandingHeader = () => {
   const [isOpen, setIsOpen] = useState(false);

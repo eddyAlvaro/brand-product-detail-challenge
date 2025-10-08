@@ -27,9 +27,7 @@ export const TopBar = () => {
             >
               <Icon className="h-4 w-4" />
               <span className="hidden min-[850px]:block">{label}</span>
-              {i < items.length - 1 && (
-                <span className="h-4 w-px bg-white/30" aria-hidden />
-              )}
+              {i < items.length - 1 && <span className="h-4 w-px bg-white/30" aria-hidden />}
             </a>
           ))}
         </nav>

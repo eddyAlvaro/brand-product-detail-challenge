@@ -1,8 +1,6 @@
 import React from "react";
 
-export const InstagramIcon: React.FC<React.SVGProps<SVGSVGElement>> = (
-  props
-) => {
+export const InstagramIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
       width="22"

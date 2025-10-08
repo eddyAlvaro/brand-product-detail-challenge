@@ -1,8 +1,11 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
 import { useEffect, useRef } from "react";
-import { CartIcon } from "@/components/icons";
+
 import type { Swiper as SwiperInstance } from "swiper";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import { CartIcon } from "@/components/icons";
+
 export type Product = {
   id: string;
   name: string;
@@ -54,10 +57,7 @@ export const RelatedProducts = ({ products }: Props) => {
             className="!w-full !max-w-[1170px] overflow-hidden px-2"
           >
             {products.map((p, index) => (
-              <SwiperSlide
-                key={p.id + index}
-                className="!h-auto box-border !mr-1 md:!mr-2"
-              >
+              <SwiperSlide key={p.id + index} className="!h-auto box-border !mr-1 md:!mr-2">
                 <article className="h-full w-full rounded-[10px] bg-white shadow-soft transition-all flex flex-col p-2 cursor-pointer">
                   <div className="relative">
                     <img
@@ -77,18 +77,12 @@ export const RelatedProducts = ({ products }: Props) => {
 
                   <div className="p-3 flex flex-col gap-1 grow text-start">
                     <span className="text-[12px] text-foreground">Brand</span>
-                    <p className="text-[15px] font-semibold text-foreground">
-                      {p.name}
-                    </p>
+                    <p className="text-[15px] font-semibold text-foreground">{p.name}</p>
 
                     <div className="mt-auto flex items-center gap-2">
-                      <p className="text-[18px] font-bold text-brand-primary">
-                        {p.price}
-                      </p>
+                      <p className="text-[18px] font-bold text-brand-primary">{p.price}</p>
                       {p.oldPrice && (
-                        <p className="text-[15px] text-foreground line-through">
-                          {p.oldPrice}
-                        </p>
+                        <p className="text-[15px] text-foreground line-through">{p.oldPrice}</p>
                       )}
                     </div>
 
@@ -112,11 +106,7 @@ export const RelatedProducts = ({ products }: Props) => {
             stroke="currentColor"
             strokeWidth="2"
           >
-            <path
-              d="M15 6l-6 6 6 6"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
+            <path d="M15 6l-6 6 6 6" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>
 
@@ -131,11 +121,7 @@ export const RelatedProducts = ({ products }: Props) => {
             stroke="currentColor"
             strokeWidth="2"
           >
-            <path
-              d="M9 18l6-6-6-6"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
+            <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>
       </div>

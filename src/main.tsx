@@ -1,12 +1,16 @@
 import { StrictMode } from "react";
+
 import { createRoot } from "react-dom/client";
-import "@/index.css";
-import "@/theme/fonts.css";
-import App from "@/App.tsx";
-import { StyledEngineProvider, ThemeProvider } from "@mui/material/styles";
+
 import { GlobalStyles } from "@mui/material";
+import { StyledEngineProvider, ThemeProvider } from "@mui/material/styles";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+import App from "@/App.tsx";
+import "@/index.css";
 import theme from "@/theme";
+import "@/theme/fonts.css";
+
 const queryClient = new QueryClient();
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -18,5 +22,5 @@ createRoot(document.getElementById("root")!).render(
         </StyledEngineProvider>
       </ThemeProvider>
     </QueryClientProvider>
-  </StrictMode>
+  </StrictMode>,
 );

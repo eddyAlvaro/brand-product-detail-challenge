@@ -1,4 +1,5 @@
 import React from "react";
+
 import { NewsletterCta } from "@/components/ui/newsletter-cta";
 import { LandingFooter } from "@/layouts/landing-layout/landing-footer";
 import LandingHeader from "@/layouts/landing-layout/landing-header";

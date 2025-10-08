@@ -17,9 +17,7 @@ export const RatingsBar = ({ total, average, onWrite }: Props) => {
         <span className="">valoraciones de clientes</span>
         <div className="flex items-center gap-2 pl-2">
           <StarIcon className="h-6 w-6" />
-          <span className="font-bold text-brand-accent">
-            {average.toFixed(1)}
-          </span>
+          <span className="font-bold text-brand-accent">{average.toFixed(1)}</span>
         </div>
       </div>
       <div className="flex items-center">

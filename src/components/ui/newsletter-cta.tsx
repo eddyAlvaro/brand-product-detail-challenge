@@ -20,6 +20,7 @@ export const NewsletterCta = ({
       setBusy(true);
       setOk(true);
     } catch {
+      throw new Error("Error al enviar el correo");
     } finally {
       setBusy(false);
     }
@@ -31,17 +32,11 @@ export const NewsletterCta = ({
     >
       <div className="mx-auto flex w-full max-w-[1440px] flex-col items-start gap-4 px-[24px] py-6 sm:flex-row sm:items-center sm:justify-between sm:px-[40px]">
         <div className="max-w-xl">
-          <h2 className="text-[18px] font-extrabold leading-tight sm:text-[22px]">
-            {title}
-          </h2>
+          <h2 className="text-[18px] font-extrabold leading-tight sm:text-[22px]">{title}</h2>
           <p className="text-[14px] sm:text-[15px]">{subtitle}</p>
         </div>
 
-        <form
-          onSubmit={handleSubmit}
-          className="relative w-full max-w-[820px] md:mr-8"
-          noValidate
-        >
+        <form onSubmit={handleSubmit} className="relative w-full max-w-[820px] md:mr-8" noValidate>
           <input
             type="email"
             name="email"
@@ -69,10 +64,7 @@ export const NewsletterCta = ({
           </button>
 
           {ok && (
-            <p
-              className="absolute bottom-[-20px] left-[30px] text-sm text-white/90"
-              role="status"
-            >
+            <p className="absolute bottom-[-20px] left-[30px] text-sm text-white/90" role="status">
               ¡Felicidades! Te suscribiste correctamente.
             </p>
           )}

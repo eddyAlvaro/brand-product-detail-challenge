@@ -18,9 +18,7 @@ export const ProductPrice = ({ price, oldPrice, discountBadge }: Props) => {
         {formatCurrency(price)}
       </p>
       {oldPrice && (
-        <p className="text-[24px] text-muted line-through">
-          {formatCurrency(oldPrice)}
-        </p>
+        <p className="text-[24px] text-muted line-through">{formatCurrency(oldPrice)}</p>
       )}
     </div>
   );

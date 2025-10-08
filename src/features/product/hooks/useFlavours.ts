@@ -1,5 +1,6 @@
-import { fetchFlavours } from "@/features/product/services/flavour.api";
 import { queryOptions, useQuery } from "@tanstack/react-query";
+
+import { fetchFlavours } from "@/features/product/services/flavour.api";
 
 export const flavoursQuery = queryOptions({
   queryKey: ["flavours"],

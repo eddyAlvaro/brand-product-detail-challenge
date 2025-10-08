@@ -1,4 +1,5 @@
-import { memo, type MouseEventHandler } from "react";
+import { type MouseEventHandler, memo } from "react";
+
 import { Anchor } from "@/components/ui/anchor";
 
 type Props = {

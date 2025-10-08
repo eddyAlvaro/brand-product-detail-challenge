@@ -1,8 +1,6 @@
 import React from "react";
 
-export const PencilSquareIcon: React.FC<React.SVGProps<SVGSVGElement>> = (
-  props
-) => {
+export const PencilSquareIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
       width="16"
@@ -26,12 +24,7 @@ export const PencilSquareIcon: React.FC<React.SVGProps<SVGSVGElement>> = (
       </g>
       <defs>
         <clipPath id="clip0_6_151">
-          <rect
-            width="16"
-            height="16"
-            fill="white"
-            transform="translate(0 0.311707)"
-          />
+          <rect width="16" height="16" fill="white" transform="translate(0 0.311707)" />
         </clipPath>
       </defs>
     </svg>

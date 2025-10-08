@@ -1,9 +1,10 @@
 import { memo } from "react";
+
 import { DeliverySecondIcon, ShopIcon } from "@/components/icons";
-import IconLink from "@/components/ui/icon-link";
-import type { NavLink } from "@/constants/nav-links";
-import { UnderlineNavItem } from "@/components/ui/underline-nav-item";
 import { Anchor } from "@/components/ui/anchor";
+import IconLink from "@/components/ui/icon-link";
+import { UnderlineNavItem } from "@/components/ui/underline-nav-item";
+import type { NavLink } from "@/constants/nav-links";
 
 type Props = {
   links: NavLink[];
@@ -31,12 +32,7 @@ const UL_CLASSES = `
   uppercase font-medium text-[18px] md:text-[15px]
   motion-reduce:transition-none motion-reduce:duration-0
 `;
-const NavLinks = memo(function NavLinks({
-  links,
-  isOpen,
-  id,
-  onItemClick,
-}: Props) {
+const NavLinks = memo(function NavLinks({ links, isOpen, id, onItemClick }: Props) {
   return (
     <ul
       id={id}

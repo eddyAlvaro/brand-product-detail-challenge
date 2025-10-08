@@ -16,7 +16,7 @@ export const ProductBreadcrumbs = ({ items }: Props) => (
         </Link>
       ) : (
         <Typography key={index}>{label}</Typography>
-      )
+      ),
     )}
   </Breadcrumbs>
 );

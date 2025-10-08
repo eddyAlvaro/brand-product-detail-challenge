@@ -1,10 +1,4 @@
-import {
-  FormControl,
-  FormLabel,
-  MenuItem,
-  Select,
-  type SelectChangeEvent,
-} from "@mui/material";
+import { FormControl, FormLabel, MenuItem, Select, type SelectChangeEvent } from "@mui/material";
 
 type Props = {
   label?: string;
@@ -13,12 +7,7 @@ type Props = {
   onChange: (value: string) => void;
 };
 
-const FlavourSelect = ({
-  label = "Sabor:",
-  options,
-  value,
-  onChange,
-}: Props) => {
+const FlavourSelect = ({ label = "Sabor:", options, value, onChange }: Props) => {
   return (
     <FormControl fullWidth>
       <FormLabel className="my-3 text-[16px] text-subtle">{label}</FormLabel>
@@ -27,11 +16,7 @@ const FlavourSelect = ({
         onChange={(e: SelectChangeEvent<string>) => onChange(e.target.value)}
         displayEmpty
         renderValue={(selected) =>
-          selected ? (
-            selected
-          ) : (
-            <span className="text-brand-primary">Escoger sabor</span>
-          )
+          selected ? selected : <span className="text-brand-primary">Escoger sabor</span>
         }
         className="w-full sm:max-w-[40%] rounded-[8px] mt-6 mb-2 sm:mx-4 shadow-[0_4px_14px_rgba(0,0,0,0.10)]"
         sx={{

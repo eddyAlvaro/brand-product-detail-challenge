@@ -1,7 +1,7 @@
-import type { FooterLink } from "@/constants/footer-links";
 import { LocationIcon } from "@/components/icons/location-icon";
-import { SectionTitle } from "@/components/ui/section-title";
 import { FooterTextLink } from "@/components/ui/footer/footer-text-link";
+import { SectionTitle } from "@/components/ui/section-title";
+import type { FooterLink } from "@/constants/footer-links";
 
 type Props = {
   id: string;
@@ -11,23 +11,12 @@ type Props = {
   children?: React.ReactNode;
 };
 
-export function FooterColumn({
-  id,
-  title,
-  links,
-  showLocationIcon,
-  children,
-}: Props) {
+export function FooterColumn({ id, title, links, showLocationIcon, children }: Props) {
   const titleId = `footer-${id}-title`;
 
   return (
     <nav aria-labelledby={titleId} className="">
-      <SectionTitle
-        as="h3"
-        align="left"
-        underlineWidthClass="w-full"
-        className="text-[16px]"
-      >
+      <SectionTitle as="h3" align="left" underlineWidthClass="w-full" className="text-[16px]">
         <span id={titleId}>{title}</span>
       </SectionTitle>
 

@@ -1,7 +1,9 @@
-import type { DeliveryType } from "@/features/product/types";
-import { ToggleButton, ToggleButtonGroup } from "@mui/material";
-import { DeliveryIcon, StoreIcon } from "@/components/icons";
 import type { MouseEvent } from "react";
+
+import { ToggleButton, ToggleButtonGroup } from "@mui/material";
+
+import { DeliveryIcon, StoreIcon } from "@/components/icons";
+import type { DeliveryType } from "@/features/product/types";
 
 type Props = {
   value: DeliveryType;
@@ -9,10 +11,7 @@ type Props = {
 };
 
 export const DeliveryOptions = ({ value, onChange }: Props) => {
-  const handleDelivery = (
-    _: MouseEvent<HTMLElement>,
-    newValue: DeliveryType | null
-  ) => {
+  const handleDelivery = (_: MouseEvent<HTMLElement>, newValue: DeliveryType | null) => {
     if (newValue) onChange(newValue);
   };
   return (
@@ -50,11 +49,7 @@ export const DeliveryOptions = ({ value, onChange }: Props) => {
           },
         }}
       >
-        <ToggleButton
-          className="text-[14px]"
-          value="home"
-          aria-label="Despacho a domicilio"
-        >
+        <ToggleButton className="text-[14px]" value="home" aria-label="Despacho a domicilio">
           <DeliveryIcon className="mb-[2px]" />
           <span>Despacho a domicilio</span>
           <span

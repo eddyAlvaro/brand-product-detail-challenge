@@ -1,7 +1,8 @@
 import { Link as MLink } from "@mui/material";
-import { FOOTER_COLUMNS } from "@/constants/footer-links";
+
 import { FooterColumn } from "@/components/ui/footer/footer-column";
 import { FooterSocial } from "@/components/ui/footer/footer-social";
+import { FOOTER_COLUMNS } from "@/constants/footer-links";
 
 function FooterTextLink({
   href,
@@ -41,23 +42,15 @@ export const LandingFooter = () => {
               showLocationIcon={col.showLocationIcon}
             >
               {col.social && (
-                <FooterSocial
-                  parentId={col.id}
-                  title={col.social.title}
-                  items={col.social.items}
-                />
+                <FooterSocial parentId={col.id} title={col.social.title} items={col.social.items} />
               )}
             </FooterColumn>
           ))}
         </div>
 
         <div className="mt-8 flex flex-col items-center gap-2 text-center md:flex-row md:justify-between text-[13px] text-foreground">
-          <FooterTextLink href="/legal/terminos">
-            Términos y condiciones
-          </FooterTextLink>
-          <span>
-            Brand © {new Date().getFullYear()} — Todos los derechos reservados
-          </span>
+          <FooterTextLink href="/legal/terminos">Términos y condiciones</FooterTextLink>
+          <span>Brand © {new Date().getFullYear()} — Todos los derechos reservados</span>
         </div>
       </div>
     </footer>

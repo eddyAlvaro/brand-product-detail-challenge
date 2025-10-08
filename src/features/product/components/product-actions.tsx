@@ -1,18 +1,14 @@
 import { useState } from "react";
 
-import type { DeliveryType } from "@/features/product/types";
-import FlavourSelect from "@/features/product/components/flavour-select";
 import { AddToCartRow } from "@/features/product/components/add-to-cart-row";
 import { DeliveryOptions } from "@/features/product/components/delivery-options";
+import FlavourSelect from "@/features/product/components/flavour-select";
 import { RatingsBar } from "@/features/product/components/ratings-bar";
+import type { DeliveryType } from "@/features/product/types";
 
 type Props = {
   flavours: string[];
-  onAdd?: (payload: {
-    flavour: string;
-    qty: number;
-    delivery: "home" | "store";
-  }) => void;
+  onAdd?: (payload: { flavour: string; qty: number; delivery: "home" | "store" }) => void;
 };
 
 const ProductActions = ({ flavours, onAdd }: Props) => {

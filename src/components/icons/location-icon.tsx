@@ -1,8 +1,6 @@
 import React from "react";
 
-export const LocationIcon: React.FC<React.SVGProps<SVGSVGElement>> = (
-  props
-) => {
+export const LocationIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
       width="24"
