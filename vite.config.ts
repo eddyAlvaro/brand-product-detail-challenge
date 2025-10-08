@@ -12,11 +12,15 @@ export default defineConfig({
     strictPort: true,
     allowedHosts: ["all"],
     hmr: {
-      host: "dkcg8cwwo88cgc8csoksswoc.162.212.158.89.sslip.io", // reemplaza con tu dominio real
-      // protocol: "wss", // usa websocket seguro si Coolify usa HTTPS
+      host: "dkcg8cwwo88cgc8csoksswoc.162.212.158.89.sslip.io",
       port: 5173,
     },
     watch: { usePolling: true },
+  },
+  preview: {
+    host: true,
+    port: 5173,
+    strictPort: true,
   },
   // TODO: add imports aliases
   resolve: {

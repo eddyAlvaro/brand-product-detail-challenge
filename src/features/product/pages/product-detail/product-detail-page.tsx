@@ -2,32 +2,68 @@ import imc_protein_crop from "../../../../assets/whey-protein-crop.png";
 import imc_protein from "../../../../assets/whey-protein.png";
 import ProductActions from "../../components/product-actions";
 import imc_shaker_bottle from "../../../../assets/shaker-bottle.png";
-import {
-  RelatedProducts,
-  type Product,
-} from "../../components/related-products.";
 import { ProductGallery } from "../../components/product-galery";
 import { ProductHeader } from "../../components/product-header";
 import { ProductDescription } from "../../components/product-description";
 import { useFlavours } from "../../hooks/useFlavours";
 import { ProductBreadcrumbs } from "../../components/product-breadcrumbs";
+import { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
+import type { Product } from "../../types/products";
+
+const RelatedProductsLazy = lazy(async () => {
+  const mod = await import("../../components/related-products.");
+  return {
+    default: (props: { products: Product[] }) => (
+      <mod.RelatedProducts {...props} />
+    ),
+  };
+});
+
 const ProductDetailPage = () => {
   const { data: flavours } = useFlavours();
 
-  const relatedProducts: Product[] = Array.from({ length: 5 }).map((_, i) => ({
-    id: String(i + 1),
-    name: "Whey Protein - Original",
-    price: "$68.390",
-    oldPrice: "$71.990",
-    discount: "-5%",
-    image: imc_shaker_bottle,
-  }));
+  const relatedProducts = useMemo<Product[]>(
+    () =>
+      Array.from({ length: 5 }).map((_, i) => ({
+        id: String(i + 1),
+        name: "Whey Protein - Original",
+        price: "$68.390",
+        oldPrice: "$71.990",
+        discount: "-5%",
+        image: imc_shaker_bottle,
+      })),
+    []
+  );
 
-  const breadcrumbs = [
-    { label: "Inicio", href: "/" },
-    { label: "Proteínas", href: "/proteinas" },
-    { label: "Whey Protein" },
-  ];
+  const breadcrumbs = useMemo(
+    () => [
+      { label: "Inicio", href: "/" },
+      { label: "Proteínas", href: "/proteinas" },
+      { label: "Whey Protein" },
+    ],
+    []
+  );
+  const relatedAnchorRef = useRef<HTMLDivElement | null>(null);
+  const [showRelated, setShowRelated] = useState(false);
+
+  useEffect(() => {
+    if (showRelated) return;
+    const el = relatedAnchorRef.current;
+    if (!el) return;
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShowRelated(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+
+    io.observe(el);
+    return () => io.disconnect();
+  }, [showRelated]);
 
   return (
     <>
@@ -68,7 +104,23 @@ const ProductDetailPage = () => {
       </section>
       <section className="flex flex-col gap-2 max-w-[1440px] w-full px-4 m-[4px_auto] text-center">
         <div className="w-full h-[1px] bg-neutral-dark" />
-        <RelatedProducts products={relatedProducts} />
+        <div ref={relatedAnchorRef} />
+        <Suspense
+          fallback={
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 py-6">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <div key={i} className="animate-pulse">
+                  <div className="mx-auto w-28 aspect-[4/3] rounded-lg bg-neutral-200" />{" "}
+                  <div className="mt-2 h-4 w-24 mx-auto bg-neutral-200 rounded" />
+                </div>
+              ))}
+            </div>
+          }
+        >
+          {showRelated ? (
+            <RelatedProductsLazy products={relatedProducts} />
+          ) : null}
+        </Suspense>
       </section>
     </>
   );

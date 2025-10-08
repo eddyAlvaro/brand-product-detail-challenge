@@ -10,6 +10,9 @@ export const ProductGallery = ({ main, thumbs, title }: Props) => {
       <img
         src={main}
         alt={title}
+        width={300}
+        height={400}
+        fetchPriority="high"
         className="w-full object-cover"
         loading="eager"
         decoding="async"
